@@ -1,0 +1,360 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --panel-bg: #f9f8fb;
+  --border: #e5e4e7;
+  --accent: #aa3bff;
+  --accent-hover: #9526e6;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --danger: #d6303f;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 16px/1.5 var(--sans);
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #b6b3bd;
+    --text-h: #f3f4f6;
+    --bg: #121218;
+    --panel-bg: #1a1a22;
+    --border: #2e303a;
+    --accent: #c084fc;
+    --accent-hover: #d3a4fd;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --danger: #ff6b6b;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.app-shell {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-height: 100svh;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+header h1 {
+  font-size: 32px;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  padding: 48px 20px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--panel-bg);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.dropzone.dragging {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.dz-title {
+  margin: 0 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.dz-sub {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* Loaded file bar */
+.loaded-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-bg);
+  font-size: 14px;
+}
+
+.filename {
+  font-weight: 600;
+  color: var(--text-h);
+  overflow-wrap: anywhere;
+}
+
+.dims {
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.link-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 0;
+  text-decoration: underline;
+}
+
+.error {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-bg);
+}
+
+.control-group {
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.control-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-h);
+  display: flex;
+  justify-content: space-between;
+}
+
+.control-label .value {
+  font-weight: 400;
+  font-family: var(--mono);
+  color: var(--accent);
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 10px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.button-group button:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.button-group button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.button-group button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text);
+}
+
+/* Preview */
+.preview-wrap {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel-bg);
+  padding: 12px;
+  overflow: hidden;
+}
+
+.preview-wrap canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.placeholder {
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Export */
+.export-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.export-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+button.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+button.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.reminder {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background: var(--accent-bg);
+  font-size: 13.5px;
+  color: var(--text-h);
+  line-height: 1.5;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+.tile-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--panel-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-card img {
+  width: 100%;
+  display: block;
+  background: repeating-conic-gradient(#8883 0% 25%, transparent 0% 50%) 50% / 16px 16px;
+}
+
+.tile-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-family: var(--mono);
+}
+
+.tile-card-footer button {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tile-card-footer button:hover {
+  border-color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
