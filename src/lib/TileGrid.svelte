@@ -16,15 +16,12 @@
     <div class="export-header">
       <h2>Export tiles</h2>
       <button type="button" class="primary" onclick={onDownloadAll} disabled={zipping}>
-        {zipping ? 'Zipping…' : 'Download All as ZIP'}
+        {zipping ? 'Zipping…' : 'Download as ZIP'}
       </button>
     </div>
 
     <p class="reminder">
-      ⚠️ <strong>Attach these to your X post in this exact order:</strong>
-      the split1 file first, then split2, split3{tiles.length > 3 ? ', split4' : ''}, one at a
-      time, left to right. X displays images by <em>upload/attach order</em>, not by filename, so
-      drag them into the composer in numbered order.
+      ⚠️ <strong>Attach these to your post in this same order as shown here.</strong> The tweet composer will show them in a grid but they will actually show in a horizontal scroller (as of August '26)
     </p>
 
     <div class="tile-grid">

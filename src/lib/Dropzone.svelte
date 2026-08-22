@@ -50,6 +50,6 @@
   onkeydown={handleKeydown}
 >
   <input type="file" accept="image/*" bind:this={fileInput} onchange={handleChange} hidden />
-  <p class="dz-title">Drop an image here, or click to choose a file</p>
-  <p class="dz-sub">PNG / JPG / WEBP (stays in your browser, never uploaded anywhere)</p>
+  <p class="dz-title">Click or drop an image here</p>
+  <p class="dz-sub">PNG / JPG / WEBP</p>
 </div>

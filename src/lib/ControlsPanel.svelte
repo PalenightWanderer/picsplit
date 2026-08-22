@@ -20,12 +20,11 @@
 
   <div class="control-group">
     <label class="control-label" for="gutter-trim">
-      Gutter trim <span class="value">{gutterTrim}px</span>
+      Edge/gutter trim<span class="value">{gutterTrim}px</span>
     </label>
     <input id="gutter-trim" type="range" min="0" max="10" step="1" bind:value={gutterTrim} disabled={disabled} />
     <p class="hint">
-      Shaves this many pixels off each touching inner edge before export, so the seam lines back
-      up once X's own tile gap is added.
+      Trims this many pixels off each touching inner edge before exporting
     </p>
   </div>
 </div>

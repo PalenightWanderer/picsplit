@@ -115,9 +115,6 @@
 <div class="app-shell">
   <header>
     <h1>picsplit</h1>
-    <p class="tagline">
-      X Split Tool: slice one image into seamless tiles for X/Twitter multi-image posts.
-    </p>
   </header>
 
   <main>
@@ -143,6 +140,6 @@
   </main>
 
   <footer>
-    <p>Everything runs locally in your browser. Your image is never uploaded to a server.</p>
+    <p>This page works entirely in your browser!</p>
   </footer>
 </div>

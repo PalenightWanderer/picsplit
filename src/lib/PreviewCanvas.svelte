@@ -54,6 +54,6 @@
   {#if imgEl}
     <canvas bind:this={canvas}></canvas>
   {:else}
-    <p class="placeholder">Upload an image to see the cut-line preview</p>
+    <p class="placeholder">Choose an image to see the preview</p>
   {/if}
 </div>
