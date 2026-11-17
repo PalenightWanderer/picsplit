@@ -21,7 +21,7 @@
     </div>
 
     <p class="reminder">
-      ⚠️ <strong>Attach these to your post in this same order as shown here.</strong> The tweet composer will show them in a grid but they will actually show in a horizontal scroller (as of August '26)
+      ⚠️ <strong>Attach these to your post in this same order as shown here.</strong> The tweet composer may show them in a grid, but they will actually show as a carousel. If you see them in a grid, make sure you arent using any extensions or userscripts such as OldTwitter.
     </p>
 
     <div class="tile-grid">
